@@ -1,0 +1,7 @@
+{{#each twoDimensionalPieces as |row|}}
+    <tr>
+        {{#each row as |piece|}}
+            <td id="{{piece}}">{{piece}}</td>
+        {{/each}}
+    </tr>
+{{/each}}

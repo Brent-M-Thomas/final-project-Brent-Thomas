@@ -1,1 +1,17 @@
+<div class="create-form">
+
+    <form {{action 'save' title url on='submit'}}>
+        <label for="title">Title</label>
+        {{input type="text" value=title}}
+
+        <label for="file">image</label>
+        {{input type="text" value=url}}
+        {{!-- <input type="file" accept="image/*" value="image"> --}}
+
+        {{!-- <label for="pieces">Pieces:</label>
+        8<input type="radio" name="pieces" value=9>
+        15<input type="radio" name="pieces" value=16> --}}
+        <button>Submit</button>
+    </form>
+</div>
 {{outlet}}

@@ -1,0 +1,20 @@
+
+.puzzle-board {
+    @include span-columns(6);
+    width: 600px;
+    background-size: 600px auto;
+    background-repeat: no-repeat;
+
+}
+table {
+    background: rgba(0,0,0,0.7);
+    width: 600px;
+    height: 600px;
+    // background: red;
+    border:1px solid black;
+}
+
+td {
+    opacity: 1;
+    border:1px solid black;
+}

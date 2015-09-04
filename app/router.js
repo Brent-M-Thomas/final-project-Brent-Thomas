@@ -8,7 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('home', function() {
     this.route('create');
-    this.route('solve');
+    this.route('solve', {path: '/:puzzle_id/solve'});
   });
 });
 
