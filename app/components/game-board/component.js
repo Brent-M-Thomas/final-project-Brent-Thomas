@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'table',
 
-  twoDimensionalPieces: Ember.computed('puzzleGame.pieces[]', function() {
+  twoDimensionalPieces: Ember.computed('puzzleGame.pieces', function() {
     var pieces = this.get('puzzleGame.pieces');
 
     return pieces.reduce(function(prev, current, index) {
@@ -35,11 +35,11 @@ export default Ember.Component.extend({
     var adjacentSpots = this.getAdjacentSpots(piece);
     var pieces = this.get('puzzleGame.pieces');
 
-// "spot" isn't the index of the piece, but the value
+    // "spot" isn't the index of the piece, but the value
     return adjacentSpots.reduce((prev, spot) => {
       if (pieces[spot] === 0) {
         console.log(pieces[spot]);
-        prev = pieces[spot];
+        return true;
       }
 
       return prev;
@@ -49,12 +49,22 @@ export default Ember.Component.extend({
   actions: {
     movePiece: function(piece) {
       var openSpot = this.getOpenSpot(piece);
+      console.log(openSpot);
       if (openSpot) {
-        `$('.piece-0').removeClass('piece-0')`;
-        `$('.piece-0').addClass('piece-' + pieces.index)`;
-        `$('piece-' + pieces.index).removeClass('piece-' + pieces.index)`;
-        `$('piece-' + pieces.index).addClass('piece-0')`;
+        var pieces = this.get('puzzleGame.pieces');
+        var emptyIndex = pieces.indexOf(0);
+        pieces[piece.index] = 0;
+        pieces[emptyIndex] = piece.value;
+        this.set('puzzleGame.pieces', []);
+        this.set('puzzleGame.pieces', pieces);
 
+
+        // var empty = Ember.$('.piece-0');
+        // var current = Ember.$('.piece-' + piece.value);
+        // empty.removeClass('piece-0');
+        // empty.addClass('piece-' + piece.value);
+        // current.removeClass('piece-' + piece.value);
+        // current.addClass('piece-0');
       }
     },
     checkWin: function(pieces) {
