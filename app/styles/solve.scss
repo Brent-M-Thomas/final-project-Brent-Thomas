@@ -17,4 +17,51 @@ table {
 td {
     opacity: 1;
     border:1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    color: $text-color-1;
 }
+
+.piece {
+    width: 200px;
+    height: 200px;
+}
+
+.piece-0 {
+    opacity: 0;
+}
+.piece-1 {
+    background-position: 0 0;
+    overflow: hidden;
+}
+.piece-2 {
+    background-position: 200px 0;
+    overflow: hidden;
+}
+.piece-3 {
+    background-position: 400px 0;
+    overflow: hidden;
+}
+.piece-4 {
+    background-position: 0 200px;
+    overflow: hidden;
+}
+
+.piece-5 {
+    background-position: 200px 200px;
+    overflow: hidden;
+}
+.piece-6 {
+    background-position: 400px 200px;
+    overflow: hidden;
+}
+.piece-7 {
+    background-position: 0 400px;
+    overflow: hidden;
+}
+
+.piece-8 {
+    background-position: 200px 400px;
+    overflow: hidden;
+}
+

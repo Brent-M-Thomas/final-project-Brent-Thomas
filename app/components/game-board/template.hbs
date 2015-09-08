@@ -1,7 +1,9 @@
 {{#each twoDimensionalPieces as |row|}}
     <tr>
         {{#each row as |piece|}}
-            <td id="{{piece}}">{{piece}}</td>
+            <td class="piece-{{piece.value}} piece" style="background-image: url({{puzzle.imageUrl}});" {{action 'movePiece' piece}}>
+                {{piece.value}} - {{ piece.index }}
+            </td>
         {{/each}}
     </tr>
 {{/each}}

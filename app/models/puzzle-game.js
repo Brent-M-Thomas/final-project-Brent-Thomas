@@ -3,16 +3,6 @@ import _ from 'lodash/lodash';
 
 export default DS.Model.extend({
 
-  // piece1: DS.attr(model.imageURL);
-  // piece2: DS.attr(model.imageURL);
-  // piece3: DS.attr(model.imageURL);
-  // piece4: DS.attr(model.imageURL);
-  // piece5: DS.attr(model.imageURL);
-  // piece6: DS.attr(model.imageURL);
-  // piece7: DS.attr(model.imageURL);
-  // piece8: DS.attr(model.imageURL);
-  // piece9: DS.attr(model.imageURL);
-
   pieces: DS.attr({
     defaultValue: function() {
       return _.range(1, 10);
@@ -35,6 +25,5 @@ export default DS.Model.extend({
     this.removeLastPiece();
     this.shuffle();
   },
-
 
 });
