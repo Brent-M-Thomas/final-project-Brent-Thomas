@@ -23,7 +23,7 @@ export default DS.Model.extend({
 
   newGame: function() {
     this.removeLastPiece();
-    this.shuffle();
+    // this.shuffle();
   },
 
 });

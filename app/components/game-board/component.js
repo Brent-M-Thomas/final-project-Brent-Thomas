@@ -35,10 +35,8 @@ export default Ember.Component.extend({
     var adjacentSpots = this.getAdjacentSpots(piece);
     var pieces = this.get('puzzleGame.pieces');
 
-    // "spot" isn't the index of the piece, but the value
     return adjacentSpots.reduce((prev, spot) => {
       if (pieces[spot] === 0) {
-        console.log(pieces[spot]);
         return true;
       }
 
@@ -46,10 +44,20 @@ export default Ember.Component.extend({
     }, false);
   },
 
+  checkWin: function() {
+    var pieces = this.get('puzzleGame.pieces');
+    return pieces.reduce((prev, value, index) => {
+      if (value !== 0 && index + 1 !== value) {
+        console.log(index, value);
+        return false;
+      }
+      return prev;
+    }, true);
+  },
+
   actions: {
     movePiece: function(piece) {
       var openSpot = this.getOpenSpot(piece);
-      console.log(openSpot);
       if (openSpot) {
         var pieces = this.get('puzzleGame.pieces');
         var emptyIndex = pieces.indexOf(0);
@@ -57,6 +65,8 @@ export default Ember.Component.extend({
         pieces[emptyIndex] = piece.value;
         this.set('puzzleGame.pieces', []);
         this.set('puzzleGame.pieces', pieces);
+
+        console.log(this.checkWin());
 
 
         // var empty = Ember.$('.piece-0');
@@ -67,8 +77,5 @@ export default Ember.Component.extend({
         // current.addClass('piece-0');
       }
     },
-    checkWin: function(pieces) {
-      // if piece.value === piece.index for each piece then: Win!
-    }
   },
 });
