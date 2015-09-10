@@ -1,5 +1,5 @@
 .create-form {
-    @include span-columns(9);
+    @include span-columns(6);
     color: $text-color-1;
 }
 h4 {
@@ -7,7 +7,11 @@ h4 {
     font-size: 1.4rem;
 }
 input[type='text'] {
-    width: 60%;
+    width: 100%;
     display: block;
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
+}
+.directions {
+    margin: .5rem 0;
+
 }

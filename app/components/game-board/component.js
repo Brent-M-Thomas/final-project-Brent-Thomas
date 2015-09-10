@@ -16,14 +16,22 @@ export default Ember.Component.extend({
     }, []);
   }),
 
+  notRightEdge: function(piece) {
+    return piece.index !== 2 && piece.index !== 5;
+  },
+
+  notLeftEdge: function(piece) {
+    return piece.index !== 3 && piece.index !== 6;
+  },
+
   getAdjacentSpots: function(piece) {
     var spots = [];
 
     if (piece.index - 3 >= 0) {
       spots.push(piece.index - 3);
-    } if (piece.index - 1 >= 0) {
+    } if (piece.index - 1 >= 0 && this.notLeftEdge(piece)) {
       spots.push(piece.index - 1);
-    } if (piece.index + 1 <= 9) {
+    } if (piece.index + 1 <= 9 && this.notRightEdge(piece)) {
       spots.push(piece.index + 1);
     } if (piece.index + 3 <= 9) {
       spots.push(piece.index + 3);
@@ -65,17 +73,12 @@ export default Ember.Component.extend({
         pieces[emptyIndex] = piece.value;
         this.set('puzzleGame.pieces', []);
         this.set('puzzleGame.pieces', pieces);
+        this.checkWin();
 
-        console.log(this.checkWin());
-
-
-        // var empty = Ember.$('.piece-0');
-        // var current = Ember.$('.piece-' + piece.value);
-        // empty.removeClass('piece-0');
-        // empty.addClass('piece-' + piece.value);
-        // current.removeClass('piece-' + piece.value);
-        // current.addClass('piece-0');
       }
     },
+    resetGame: function() {
+      this.get('puzzleGame').newGame();
+    }
   },
 });

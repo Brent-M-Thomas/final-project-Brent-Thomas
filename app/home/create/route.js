@@ -8,7 +8,6 @@ export default Ember.Route.extend({
     save: function(title, imageUrl) {
       var puzzle = this.store.createRecord('puzzle', {title, imageUrl});
       puzzle.save();
-      debugger;
     },
   },
 });

@@ -1,8 +1,18 @@
+{{!-- <nav class="nav-menu">
+    <ul>
+        <li class="nav-menu-item" {{action 'shuffle'}}> Shuffle</li>
+        <li class="nav-menu-item">Show Piece Numbers</li>
+        <li class="nav-menu-item">Show Background</li>
+        <li class="nav-menu-item">New Game</li>
+        <li class="nav-menu-item">Timer</li>
+    </ul>
+</nav> --}}
+
 {{#each twoDimensionalPieces as |row|}}
     <tr>
         {{#each row as |piece|}}
             <td class="piece-{{piece.value}} piece" style="background-image: url({{puzzle.imageUrl}});" {{action 'movePiece' piece}}>
-                {{piece.value}} - {{ piece.index }}
+                {{!-- {{piece.value}} - {{ piece.index }} --}}
             </td>
         {{/each}}
     </tr>

@@ -4,7 +4,12 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'final-project-brent-thomas',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com/",
+      'font-src': "'self' https://fonts.gstatic.com",
+      'img-src': "*",
+    },
     firebase: 'https://bt-final-project.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',

@@ -2,11 +2,11 @@
     {{game-board puzzle=model.puzzle puzzleGame=model.puzzleGame}}
 </div>
 <div class="game-options">
-    {{!-- shuffle --}}
+    {{!-- {{action 'shuffle'}} --}}
     {{!-- show numbers --}}
     {{!-- show background --}}
     {{!-- Start! --}}
-
+    {{solve-timer onReset='resetGame'}}
 </div>
 
 

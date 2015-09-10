@@ -6,11 +6,17 @@
     background-repeat: no-repeat;
 
 }
+.nav-menu {
+    background: $bg-color-1;
+}
+.nav-menu-item {
+    display: inline-block;
+    margin: .2rem .7rem;
+}
 table {
     background: rgba(0,0,0,0.7);
     width: 600px;
     height: 600px;
-    // background: red;
     border:1px solid black;
 }
 
@@ -25,6 +31,7 @@ td {
 .piece {
     width: 200px;
     height: 200px;
+    background-size: 600px 600px;
 }
 
 .piece-0 {

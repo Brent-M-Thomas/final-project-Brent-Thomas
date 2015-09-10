@@ -22,8 +22,8 @@ export default DS.Model.extend({
   },
 
   newGame: function() {
+    this.set('pieces', _.range(1, 10));
     this.removeLastPiece();
-    // this.shuffle();
+    this.shuffle();
   },
-
 });
