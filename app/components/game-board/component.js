@@ -59,6 +59,7 @@ export default Ember.Component.extend({
         console.log(index, value);
         return false;
       }
+
       return prev;
     }, true);
   },
@@ -73,7 +74,10 @@ export default Ember.Component.extend({
         pieces[emptyIndex] = piece.value;
         this.set('puzzleGame.pieces', []);
         this.set('puzzleGame.pieces', pieces);
-        this.checkWin();
+
+        if (this.checkWin()) {
+          this.sendAction('onSolved');
+        }
 
       }
     },
