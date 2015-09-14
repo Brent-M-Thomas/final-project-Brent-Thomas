@@ -76,7 +76,8 @@ export default Ember.Component.extend({
         this.set('puzzleGame.pieces', pieces);
 
         if (this.checkWin()) {
-          this.sendAction('onSolved');
+          this.sendAction('onSolved')
+          alert('Congratulations!  You Win');
         }
 
       }

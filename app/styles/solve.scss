@@ -1,10 +1,19 @@
 
 .puzzle-board {
-    @include span-columns(6);
+    @include span-columns(8);
+    @include shift(2);
     width: 600px;
     background-size: 600px auto;
     background-repeat: no-repeat;
-
+}
+.stopwatch {
+    color: $text-color-2;
+    display: inline-block;
+    margin-top: 6rem;
+}
+.new-game {
+    display: inline-block;
+    margin-top: 6rem;
 }
 .nav-menu {
     background: $bg-color-1;

@@ -1,16 +1,11 @@
 
 .puzzle-menu {
-
-    // float: left;
-    // width: 20%;
-    @include span-columns(3);
-    height: 20rem;
-    max-width: 200px;
-    background: white;
-    font-size: 1.5rem;
-    a {
-        text-decoration: none;
-        // color:
-    }
-
+    @include span-columns(4);
+    @include shift(2);
 }
+
+.puzzle-menu select {
+    background: $bg-color-2;
+    color: $text-color-1;
+}
+

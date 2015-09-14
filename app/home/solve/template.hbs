@@ -1,13 +1,15 @@
 <div class="puzzle-board" style="background-image: url({{model.puzzle.imageUrl}});">
     {{game-board puzzle=model.puzzle puzzleGame=model.puzzleGame onSolved='stopClock'}}
 </div>
-<div class="game-options">
-    {{!-- {{action 'shuffle'}} --}}
-    {{!-- show numbers --}}
-    {{!-- show background --}}
-    {{!-- Start! --}}
-    {{solve-timer onReset='resetGame' puzzle=model.puzzle interval=clockInterval}}
-</div>
+
+{{!-- <div class="game-options">
+  {{action 'shuffle'}}
+    show numbers
+    show background
+    Start!
+</div> --}}
+
+{{solve-timer onReset='resetGame' puzzle=model.puzzle interval=clockInterval}}
 
 
 {{outlet}}

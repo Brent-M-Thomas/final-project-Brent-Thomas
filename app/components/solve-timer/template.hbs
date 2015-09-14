@@ -1,5 +1,5 @@
-{{moment-clock-to-now date interval=interval format='mm:ss'}}
+<p class="stopwatch">{{moment-clock-to-now date interval=interval format='mm:ss'}}</p>
 
-<button {{action 'reset'}}>New Game</button>
+<button class="new-game" {{action 'reset'}}>New Game</button>
 
 {{yield}}

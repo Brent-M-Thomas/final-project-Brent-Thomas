@@ -1,14 +1,12 @@
 
-<ul class="puzzle-menu">
-    <li>{{#link-to 'home.create'}}+ Create new puzzle{{/link-to}}</li>
-    <li>Or solve one of the following puzzles:</li>
-    {{#each model as |puzzle|}}
-    <li>
-        {{#link-to 'home.solve' puzzle}}
-            {{puzzle.title}}
-        {{/link-to}}
-    </li>
-    {{/each}}
-</ul>
+<div class="puzzle-menu">
+    {{#x-select value=options action="changeRoute"}}
+        {{#x-option}}Options{{/x-option}}
+        {{#x-option value='new'}}+ Create new puzzle{{/x-option}}
+        {{#each model as |puzzle|}}
+            {{#x-option value=puzzle}}{{puzzle.title}}{{/x-option}}
+        {{/each}}
+    {{/x-select}}
+</div>
 
 {{outlet}}
