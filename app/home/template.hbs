@@ -2,10 +2,10 @@
 <div class="puzzle-menu">
     {{#x-select value=options action="changeRoute"}}
         {{#x-option}}Options{{/x-option}}
-        {{#x-option value='new'}}+ Create new puzzle{{/x-option}}
         {{#each model as |puzzle|}}
             {{#x-option value=puzzle}}{{puzzle.title}}{{/x-option}}
         {{/each}}
+        {{#x-option value='new'}}+ Create new puzzle{{/x-option}}
     {{/x-select}}
 </div>
 

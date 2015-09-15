@@ -6,6 +6,7 @@
 $bg-color-1: #373444;
 $bg-color-2: #959BB8;
 $bg-color-test: rgba(50, 50, 100, .5);
+$text-color-default: black;
 $text-color-1: white;
 $text-color-2: yellow;
 
@@ -43,3 +44,25 @@ a {
     background: linear-gradient(#5D6170, #B9C1E1);
 }
 
+.sliding-title {
+    width: 80%;
+    margin: 10%;
+}
+.slide-row {
+    width: 100%;
+}
+
+.title-tile {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    margin: 2% 0;
+    padding: 0;
+    padding-top: 2rem;
+    font-family: 'Bevan', cursive;
+    font-size: 3rem;
+    background: $bg-color-2;
+    text-align: center;
+    border-radius: 1rem;
+    border: .2rem $text-color-default solid;
+}
