@@ -5,6 +5,7 @@
 
 $bg-color-1: #373444;
 $bg-color-2: #959BB8;
+$bg-color-test: rgba(50, 50, 100, .5);
 $text-color-1: white;
 $text-color-2: yellow;
 
@@ -13,22 +14,26 @@ $text-color-2: yellow;
 @import "solve";
 
 html {
-  box-sizing: border-box;
+    // background: url('http://www.icpi.org/sites/default/files/images/45deg-herringbone-pattern_0.jpg');
+    box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body {
-    background: $bg-color-1;
-    @include outer-container(12);
-
+    background-color: $bg-color-1;
+    // @include outer-container(12);
+}
+a {
+    text-decoration: none;
 }
 .title {
-    @include span-columns(8);
-    @include shift(2);
+    // @include span-columns(8);
+    // @include shift(2);
+    // min-width: 600px;
+    // width: 100%;
     text-align: center;
-    text-decoration: none;
     color: $text-color-1;
     font-size: 4rem;
     font-family: 'Chewy', cursive;

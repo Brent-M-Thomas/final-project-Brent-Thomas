@@ -1,7 +1,8 @@
 
 .puzzle-board {
-    @include span-columns(8);
-    @include shift(2);
+    // @include span-columns(8);
+    // @include shift(2);
+    margin-left: calc(50% - 300px);
     width: 600px;
     background-size: 600px auto;
     background-repeat: no-repeat;
@@ -9,24 +10,32 @@
 .stopwatch {
     color: $text-color-2;
     display: inline-block;
-    margin-top: 6rem;
+    position: absolute;
+    top: 5rem;
+    right: calc(50% - 10px);
 }
 .new-game {
     display: inline-block;
-    margin-top: 6rem;
+    position: absolute;
+    top: 4.8rem;
+    right: calc(50% - 300px);
+    background: $bg-color-2;
+    border: none;
+    border-radius: 5px;
+    color: $text-color-1;
 }
-.nav-menu {
-    background: $bg-color-1;
-}
-.nav-menu-item {
-    display: inline-block;
-    margin: .2rem .7rem;
-}
+
+// .game-options {
+//     margin-top: -1rem;
+//     margin-left: calc(50% - 300px);
+// }
+
 table {
     background: rgba(0,0,0,0.7);
     width: 600px;
     height: 600px;
     border:1px solid black;
+    margin-top: .5rem;
 }
 
 td {

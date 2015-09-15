@@ -1,7 +1,7 @@
 
 .puzzle-menu {
-    @include span-columns(4);
-    @include shift(2);
+    margin-top: -1.2rem;
+    margin-left: calc(50% - 300px);
 }
 
 .puzzle-menu select {
