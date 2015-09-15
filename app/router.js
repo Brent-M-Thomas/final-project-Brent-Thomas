@@ -10,6 +10,7 @@ Router.map(function() {
     this.route('create');
     this.route('solve', {path: '/:puzzle_id/solve'});
   });
+  this.route('title', {path: '/'});
 });
 
 export default Router;

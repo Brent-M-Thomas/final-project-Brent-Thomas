@@ -2,17 +2,20 @@
 @import "bourbon";
 @import "neat";
 
-
-$bg-color-1: #373444;
-$bg-color-2: #959BB8;
+$bg-color-0: #40806E;
+$bg-color-1: #416580;
+$bg-color-2: #AFB7DB;
+$bg-color-3: #404350;
 $bg-color-test: rgba(50, 50, 100, .5);
 $text-color-default: black;
 $text-color-1: white;
 $text-color-2: yellow;
+$phone: 'max-width: 650px';
 
 @import "puzzle-menu";
 @import "create";
 @import "solve";
+@import "solve-mobile";
 
 html {
     // background: url('http://www.icpi.org/sites/default/files/images/45deg-herringbone-pattern_0.jpg');
@@ -24,16 +27,11 @@ html {
 
 body {
     background-color: $bg-color-1;
-    // @include outer-container(12);
 }
 a {
     text-decoration: none;
 }
 .title {
-    // @include span-columns(8);
-    // @include shift(2);
-    // min-width: 600px;
-    // width: 100%;
     text-align: center;
     color: $text-color-1;
     font-size: 4rem;
@@ -41,7 +39,11 @@ a {
     font-style: italic;
     font-weight: 400;
     padding: 1rem;
-    background: linear-gradient(#5D6170, #B9C1E1);
+    background: linear-gradient($bg-color-1, $bg-color-2);
+    @media screen and ($phone) {
+        font-size: 2rem;
+        padding: .5rem;
+    }
 }
 
 .sliding-title {
@@ -54,7 +56,7 @@ a {
     display: inline-block;
     width: 7rem;
     height: 7rem;
-    margin: .5rem 0;
+    margin:0;
     padding: 0;
     padding-top: 2rem;
     font-family: 'Bevan', cursive;
@@ -64,55 +66,188 @@ a {
     border-radius: 1rem;
     border: .2rem $text-color-default solid;
     color: $text-color-default;
+    @media screen and ($phone) {
+        width: 2rem;
+        height: 2rem;
+        padding-top: .5rem;
+        font-size: 1rem;
+        border-radius: .5rem;
+        border: .2rem $text-color-default solid;
+    }
 }
 .slide-row {
     width: 100%;
 }
 .up {
-    animation: moveUp 2s linear .1s;
-}
-@keyframes moveUp{
-    0% {
-        transform: translateY(8rem);
+        animation: moveUp 10s linear .1s infinite;
     }
-    100% {
+    @keyframes moveUp{
+        0% {
+            transform: translateY(7rem);
+        }
+        20% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(0);
+        }
+
+        80% {
+            transform: translateY(7rem);
+        }
+
+        100% {
+            transform: translateY(7rem);
+        }
+    }
+
+    .down {
+        animation: moveDown 10s linear .1s infinite;
+    }
+    @keyframes moveDown {
+        0% {
+        transform: translateY(-7rem);
+        }
+        20% {
         transform: translateY(0);
-    }
-}
+        }
+        50% {
+        transform: translateY(0);
+        }
+        80% {
+        transform: translateY(-7rem);
+        }
+        100% {
+        transform: translateY(-7rem);
+        }
 
-.down {
-    animation: moveDown 2s linear .1s;
-}
-@keyframes moveDown {
-    0% {
-    transform: translateY(-8rem);
     }
-    100% {
-    transform: translateY(0);
+    .left {
+        animation: moveLeft 10s linear .1s infinite;
     }
-}
-.left {
-    animation: moveLeft 2s linear .1s;
-}
-@keyframes moveLeft{
-    0% {
-        transform: translateX(7.2rem);
+    @keyframes moveLeft{
+        0% {
+            transform: translateX(7.2rem);
+        }
+        20% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(0);
+        }
+        80% {
+            transform: translateX(7.2rem);
+        }
+        100% {
+            transform: translateX(7.2rem);
+        }
     }
-    100% {
-        transform: translateX(0);
+    .right {
+        animation: moveRight 10s linear .1s infinite;
     }
-}
-.right {
-    animation: moveRight 2s linear .1s;
-}
-@keyframes moveRight{
-    0% {
-        transform: translateX(-7.2rem);
+    @keyframes moveRight{
+        0% {
+            transform: translateX(-7.2rem);
+        }
+        20% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(0);
+        }
+        80% {
+            transform: translateX(-7.2rem);
+        }
+        100% {
+            transform: translateX(-7.2rem);
+        }
     }
-    100% {
-        transform: translateX(0);
-    }
-}
 
+@media screen and ($phone) {
+    .up {
+        animation: moveUp 10s linear .1s infinite;
+    }
+    @keyframes moveUp{
+        0% {
+            transform: translateY(2rem);
+        }
+        20% {
+            transform: translateY(0);
+        }
 
+        50% {
+            transform: translateY(0);
+        }
 
+        80% {
+            transform: translateY(2rem);
+        }
+
+        100% {
+            transform: translateY(2rem);
+        }
+    }
+
+    .down {
+        animation: moveDown 10s linear .1s infinite;
+    }
+    @keyframes moveDown {
+        0% {
+        transform: translateY(-2rem);
+        }
+        20% {
+        transform: translateY(0);
+        }
+        50% {
+        transform: translateY(0);
+        }
+        80% {
+        transform: translateY(-2rem);
+        }
+        100% {
+        transform: translateY(-2rem);
+        }
+
+    }
+    .left {
+        animation: moveLeft 10s linear .1s infinite;
+    }
+    @keyframes moveLeft{
+        0% {
+            transform: translateX(2.2rem);
+        }
+        20% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(0);
+        }
+        80% {
+            transform: translateX(2.2rem);
+        }
+        100% {
+            transform: translateX(2.2rem);
+        }
+    }
+    .right {
+        animation: moveRight 10s linear .1s infinite;
+    }
+    @keyframes moveRight{
+        0% {
+            transform: translateX(-2.2rem);
+        }
+        20% {
+            transform: translateX(0);
+        }
+        50% {
+            transform: translateX(0);
+        }
+        80% {
+            transform: translateX(-2.2rem);
+        }
+        100% {
+            transform: translateX(-2.2rem);
+        }
+    }
+}

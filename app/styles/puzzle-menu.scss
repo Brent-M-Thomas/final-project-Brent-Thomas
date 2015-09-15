@@ -2,10 +2,15 @@
 .puzzle-menu {
     margin-top: -1.2rem;
     margin-left: calc(50% - 300px);
+
+    @media screen and ($phone) {
+    margin-top: 0;
+    margin-left: calc(50% - 150px);
+    }
 }
 
 .puzzle-menu select {
-    background: $bg-color-2;
+    background: $bg-color-3;
     color: $text-color-1;
 }
 
