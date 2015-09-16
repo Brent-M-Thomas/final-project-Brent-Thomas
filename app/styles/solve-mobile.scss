@@ -1,4 +1,9 @@
 @media screen and ($phone) {
+    .fake-nav {
+        position: absolute;
+        top: 3rem;
+    }
+
     .puzzle-board {
 
         margin-left: calc(50% - 150px);

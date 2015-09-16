@@ -7,7 +7,10 @@ export default Ember.Route.extend({
   actions: {
     save: function(title, imageUrl) {
       var puzzle = this.store.createRecord('puzzle', {title, imageUrl});
-      puzzle.save();
+      puzzle.save().then(() => {
+        this.transtionTo('home');
+      });
     },
   },
+
 });

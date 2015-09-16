@@ -1,13 +1,11 @@
-<div class="puzzle-board" style="background-image: url({{model.puzzle.imageUrl}});">
-    {{game-board puzzle=model.puzzle puzzleGame=model.puzzleGame onSolved='stopClock'}}
-</div>
+<p class="directions">
+    The objective is to put all the pieces in the correct order to complete the image.  Pieces can be moved by clicking any tile next to the empty space.  The complete image is displayed darkened in the background and can be seen in the space without an image tile.
+</p>
 
 {{solve-timer onReset='resetGame' puzzle=model.puzzle interval=clockInterval}}
 
-<p class="directions">
-    The objective is to put all the pieces in order to complete the image.  Pieces can be moved by clicking any tile next to the empty space.  The complete image is displayed darkened in the background and can be seen in the space without an image tile.
-</p>
-
-
+<div class="puzzle-board" style="background-image: url({{model.puzzle.imageUrl}});">
+    {{game-board puzzle=model.puzzle puzzleGame=model.puzzleGame onSolved='stopClock'}}
+</div>
 
 {{outlet}}
