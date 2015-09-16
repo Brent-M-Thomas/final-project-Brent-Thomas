@@ -25,6 +25,10 @@
     td {
         border:1px solid black;
     }
+    .directions {
+        @include span-columns(10);
+        @include shift(1);
+    }
 
     .piece {
         width: 100px;

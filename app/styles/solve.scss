@@ -1,7 +1,5 @@
 
 .puzzle-board {
-    // @include span-columns(8);
-    // @include shift(2);
     margin-left: calc(50% - 300px);
     width: 600px;
     background-size: 600px auto;
@@ -49,6 +47,17 @@ td {
     text-align: center;
     vertical-align: middle;
     color: $text-color-1;
+}
+.directions {
+    width: 600px;
+    margin-left: calc(50% - 300px);
+    font-family: arial;
+    color: $text-color-1;
+    padding: 1rem;
+    background: $bg-color-3;
+    border-radius: .5rem;
+    border: 2px solid $bg-color-2;
+
 }
 
 .piece {

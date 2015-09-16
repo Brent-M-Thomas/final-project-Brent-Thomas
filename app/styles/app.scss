@@ -10,7 +10,7 @@ $bg-color-test: rgba(50, 50, 100, .5);
 $text-color-default: black;
 $text-color-1: white;
 $text-color-2: yellow;
-$phone: 'max-width: 650px';
+$phone: 'max-width: 690px';
 
 @import "puzzle-menu";
 @import "create";
@@ -47,9 +47,19 @@ a {
 }
 
 .sliding-title {
-    width: 80%;
-    margin: 10%;
     text-decoration: none;
+    width: 45rem;
+    margin: auto;
+    margin-top: 15%;
+    @media screen and ($phone) {
+    width: 19.5rem;
+    }
+}
+.slide-row {
+    width: 45rem;
+    @media screen and ($phone) {
+    width: 19.5rem;
+    }
 }
 
 .title-tile {
@@ -67,16 +77,12 @@ a {
     border: .2rem $text-color-default solid;
     color: $text-color-default;
     @media screen and ($phone) {
-        width: 2rem;
-        height: 2rem;
-        padding-top: .5rem;
+        width: 3rem;
+        height: 3rem;
+        padding-top: 1rem;
         font-size: 1rem;
         border-radius: .5rem;
-        border: .2rem $text-color-default solid;
     }
-}
-.slide-row {
-    width: 100%;
 }
 .up {
         animation: moveUp 10s linear .1s infinite;

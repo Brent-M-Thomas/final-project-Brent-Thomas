@@ -2,13 +2,11 @@
     {{game-board puzzle=model.puzzle puzzleGame=model.puzzleGame onSolved='stopClock'}}
 </div>
 
-{{!-- <div class="game-options">
-  {{action 'shuffle'}}
-    show numbers
-    show background
-    Start!
-</div> --}}
 {{solve-timer onReset='resetGame' puzzle=model.puzzle interval=clockInterval}}
+
+<p class="directions">
+    The objective is to put all the pieces in order to complete the image.  Pieces can be moved by clicking any tile next to the empty space.  The complete image is displayed darkened in the background and can be seen in the space without an image tile.
+</p>
 
 
 

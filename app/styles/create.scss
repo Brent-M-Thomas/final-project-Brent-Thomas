@@ -1,5 +1,6 @@
 .create-form {
     @include span-columns(6);
+    @include shift(3);
     color: $text-color-1;
 }
 h4 {
