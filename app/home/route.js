@@ -1,6 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  beforeModel: function() {
+    this.transitionTo('home.solve', '-JyhdTcqOiYRCkTIqAyM');
+  },
+
   model: function() {
     return this.store.findAll('puzzle');
   },
