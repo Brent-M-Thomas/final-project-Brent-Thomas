@@ -2,7 +2,7 @@
 {{#each twoDimensionalPieces as |row|}}
     <tr>
         {{#each row as |piece|}}
-            <td class="piece-{{piece.value}} piece" style="background-image: url({{puzzle.imageUrl}});" {{action 'movePiece' piece on="click touchStart"}}>
+            <td class="piece-{{piece.value}} piece" style="background-image: url({{puzzle.imageUrl}});" {{action 'movePiece' piece on="click"}}>
                 {{!-- {{piece.value}} - {{ piece.index }} --}}
             </td>
         {{/each}}
